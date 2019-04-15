@@ -12,11 +12,7 @@ public class QuizController {
 		return "questions";
 	}
 	
-	@RequestMapping("/")
-	public String home(Model theModel) {
-		
-		return "index";
-	}
+	
 	@RequestMapping("/myservlet")
 	public String scoreCount(Model theModel) {
 		
@@ -45,7 +41,7 @@ public class QuizController {
 		
 		return "score";
 	}
-	@RequestMapping("/SignUp")
+	@RequestMapping("/")
 	public String SignUp(Model theModel) {
 		
 		return "SignUp";
