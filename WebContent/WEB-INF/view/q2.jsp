@@ -14,6 +14,20 @@
 var t = setTimeout("document.options.submit();",10000); //2 seconds measured in miliseconds
 </script>
 
+<script language="JavaScript" type="text/javascript">
+var timeleft = 10;
+var downloadTimer = setInterval(function(){
+  document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+  timeleft -= 1;
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Finished"
+  }
+}, 1000);
+</script>
+<div id="countdown"></div>
+
+
 </head>
 <body>
 <h1>Question 2</h1>

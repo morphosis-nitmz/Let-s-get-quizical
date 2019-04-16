@@ -52,6 +52,11 @@ public class QuizController {
 		
 		return "after_reg";
 	}
+	@RequestMapping("/countdown")
+	public String countdown(Model theModel) {
+		
+		return "countdown";
+	}
    
 	
 }
