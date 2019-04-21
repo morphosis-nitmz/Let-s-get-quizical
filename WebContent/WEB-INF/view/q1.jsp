@@ -9,6 +9,15 @@
 <head>
 <meta charset="ISO-8859-1">
 
+
+<%
+   String userId = (String) session.getAttribute("leader");
+   if(userId == null) {
+      response.sendRedirect("login");
+   }
+%>
+
+
 <title>Question 1</title>
 
 <script language="JavaScript" type="text/javascript"> 
