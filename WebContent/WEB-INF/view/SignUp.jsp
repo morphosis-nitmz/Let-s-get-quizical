@@ -5,7 +5,6 @@
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
-
 <div class="container">
 
 <hr>
@@ -80,3 +79,8 @@
 
 </div> 
 <!--container end.//-->
+ <%if(null!=request.getAttribute("errorMessage"))
+    {
+        out.println(request.getAttribute("errorMessage"));
+    }
+%>

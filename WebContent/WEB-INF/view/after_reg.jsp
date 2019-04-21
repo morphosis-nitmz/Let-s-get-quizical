@@ -51,12 +51,19 @@ try{
 	
 }catch (Exception e) {
 	// TODO Auto-generated catch block
-	e.printStackTrace();
+	e.printStackTrace();	
+	request.setAttribute("errorMessage", "One or more Enrollment Number has already been registered in a team");
+	RequestDispatcher rd = request.getRequestDispatcher("SignUp.jsp");
+    rd.forward(request, response);
 }
+
+request.setAttribute("Success", "Successfully Registered ! login now");
+RequestDispatcher rd = request.getRequestDispatcher("SignUp.jsp");
+rd.forward(request, response);
 
 %>
 
 
-You are successfully registered.
+
 </body>
 </html>
