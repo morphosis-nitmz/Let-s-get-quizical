@@ -4,16 +4,17 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class CalScore {
-           public static void calScore(int count,String answer)
+           public static void calScore(String user,int count,String answer)
            {
         	   Statement s5,s6;
         	   String correct=null;
         	    int score=0;
+        	    
 			try {
 				s5 = DatabaseConnection.getConnection();
 				s6=DatabaseConnection.getConnection();
 				ResultSet rs5= s5.executeQuery("select answer from options where flag="+count);
-				ResultSet rs6= s6.executeQuery("select score from score");
+				ResultSet rs6= s6.executeQuery("select score from login where leader='"+user+"'");
 				
 				if(rs6.next())
 				{
@@ -30,8 +31,9 @@ public class CalScore {
 				    	score=score+5;
 				    }
 				    System.out.println(score);
+				    System.out.println(user);
 				    Statement s4=DatabaseConnection.getConnection();
-				    int rs4= s4.executeUpdate("update score set score="+score);
+				    int rs4= s4.executeUpdate("update login set score='"+score+"' where leader='"+user+"'");
 				    
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -39,11 +41,11 @@ public class CalScore {
 			}
         	   
            }
-           public static int getScore()
+           public static int getScore(String user)
            {
         	   int score=0;
         	 try {  Statement s6=DatabaseConnection.getConnection();
-        	   ResultSet rs6= s6.executeQuery("select score from score");
+        	   ResultSet rs6= s6.executeQuery("select score from login where leader='"+user+"'");
         	   if(rs6.next())
         	   {
         		   score=rs6.getInt(1);

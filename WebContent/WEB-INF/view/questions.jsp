@@ -100,10 +100,10 @@ try {
     </script>
 
 <% String answer = request.getParameter("answer");
-   
+   String user=(String)session.getAttribute("leader");
    if(answer!=null)
     {
-	   CalScore.calScore(count,answer);
+	   CalScore.calScore(user,count,answer);
 	
      
      /* System.out.println(answer);

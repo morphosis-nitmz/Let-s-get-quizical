@@ -15,7 +15,7 @@
 <div class="col-md-6">
 <div class="card">
 <header class="card-header">
-	<a href="" class="float-right btn btn-outline-primary mt-1">Log in</a>
+	<a href="login" class="float-right btn btn-outline-primary mt-1">Log in</a>
 	<h4 class="card-title mt-2">Sign up</h4>
 </header>
 <article class="card-body">
@@ -23,47 +23,47 @@
 	<div class="form-row">
 		<div class="col form-group">
 			<label>Leader name </label>   
-		  	<input type="text" name="leader" class="form-control" placeholder="">
+		  	<input type="text" name="leader" class="form-control" placeholder="" required>
 		</div> <!-- form-group end.// -->
 		<div class="col form-group">
 			<label>Enrollment number</label>
-		  	<input type="text" name="leader_enroll" class="form-control" placeholder=" ">
+		  	<input type="text" name="leader_enroll" class="form-control" placeholder=" " required>
 		</div> <!-- form-group end.// -->
 	</div> <!-- form-row end.// -->
 	
 	<div class="form-row">
 		<div class="col form-group">
 			<label>Member name </label>   
-		  	<input type="text" name="member1"class="form-control" placeholder="">
+		  	<input type="text" name="member1"class="form-control" placeholder="" required>
 		</div> <!-- form-group end.// -->
 		<div class="col form-group">
 			<label>Enrollment number</label>
-		  	<input type="text" name="mem_enroll1"class="form-control" placeholder=" ">
+		  	<input type="text" name="mem_enroll1"class="form-control" placeholder=" " required>
 		</div> <!-- form-group end.// -->
 	</div> <!-- form-row end.// -->
 	<div class="form-row">
 		<div class="col form-group">
 			<label>Member name </label>   
-		  	<input type="text" name="member2"  class="form-control" placeholder="">
+		  	<input type="text" name="member2"  class="form-control" placeholder="" required>
 		</div> <!-- form-group end.// -->
 		<div class="col form-group">
 			<label>Enrollment number</label>
-		  	<input type="text" name="mem_enroll2" class="form-control" placeholder=" ">
+		  	<input type="text" name="mem_enroll2" class="form-control" placeholder=" " required>
 		</div> <!-- form-group end.// -->
 	</div> <!-- form-row end.// -->
 	<div class="form-row">
 		<div class="col form-group">
 			<label>Member name </label>   
-		  	<input type="text" name="member3" class="form-control" placeholder="">
+		  	<input type="text" name="member3" class="form-control" placeholder="" required>
 		</div> <!-- form-group end.// -->
 		<div class="col form-group">
 			<label>Enrollment number</label>
-		  	<input type="text" name="mem_enroll3"class="form-control" placeholder=" ">
+		  	<input type="text" name="mem_enroll3"class="form-control" placeholder=" " required>
 		</div> <!-- form-group end.// -->
 	</div> <!-- form-row end.// -->
 	<div class="form-group">
 		<label>Create password</label>
-	    <input class="form-control" type="password" name="password">
+	    <input class="form-control" type="password" name="password" required>
 	</div> <!-- form-group end.// -->  
     <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block"> Register  </button>
@@ -71,7 +71,7 @@
     <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>                                          
 </form>
 </article> <!-- card-body end .// -->
-<div class="border-top card-body text-center">Have an account? <a href="">Log In</a></div>
+<div class="border-top card-body text-center">Have an account? <a href="login">Log In</a></div>
 </div> <!-- card.// -->
 </div> <!-- col.//-->
 

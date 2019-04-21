@@ -12,13 +12,6 @@ public class QuizController {
 		return "questions";
 	}
 	
-	
-	@RequestMapping("/myservlet")
-	public String scoreCount(Model theModel) {
-		
-		return "myservlet";
-	}
-	
 	@RequestMapping("/q1")
 	public String question1(Model theModel) {
 		
@@ -52,11 +45,22 @@ public class QuizController {
 		
 		return "after_reg";
 	}
-	@RequestMapping("/countdown")
-	public String countdown(Model theModel) {
-		
-		return "countdown";
-	}
-   
 	
+	@RequestMapping("/login")
+	public String login(Model theModel) {
+		
+		return "login";
+	}
+	@RequestMapping("/LoginAuth")
+	public String Loginauth(Model theModel) {
+		
+		return "LoginAuth";
+	}
+	
+	@RequestMapping("/afterlogin")
+	public String afterlogin(Model theModel) {
+		
+		return "afterlogin";
+	}
+
 }

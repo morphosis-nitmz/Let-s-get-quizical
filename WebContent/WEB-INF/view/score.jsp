@@ -10,16 +10,16 @@
 <body>
 <%
    String answer3 = request.getParameter("answer3");
-   
+   String user=(String)session.getAttribute("leader");
 
    if(answer3!=null)
    {
-	   CalScore.calScore(3,answer3);
+	   CalScore.calScore(user,3,answer3);
 
    }
    
    
 	    %>
-	 Your score is ::   <%=CalScore.getScore() %>
+	 Your score is ::   <%=CalScore.getScore(user) %>
 </body>
 </html>

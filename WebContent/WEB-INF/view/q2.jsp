@@ -35,10 +35,10 @@ var downloadTimer = setInterval(function(){
 
 <%
 String answer1 = request.getParameter("answer1");
-
+String user=(String)session.getAttribute("leader");
 if(answer1!=null)
     {
-	   CalScore.calScore(1,answer1);
+	   CalScore.calScore(user,1,answer1);
 
 	    
 
@@ -88,7 +88,7 @@ try {
 
 <p><%=ques%></p>
 <br></br>
-<form name="options" action="q3">
+<form name="options" action="q3" method="post">
   <input type="radio" name="answer2" value="<%=option_A %>" ><%=option_A %><br>
   <input type="radio" name="answer2" value="<%=option_B %>"> <%=option_B%><br>
   <input type="radio" name="answer2" value="<%=option_C %>"> <%=option_C %><br>

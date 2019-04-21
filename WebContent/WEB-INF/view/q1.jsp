@@ -75,7 +75,7 @@ try {
 
 <p><%=ques%></p>
 <br></br>
-<form name="options" action="q2">
+<form name="options" action="q2" method="post">
   <input type="radio" name="answer1" value="<%=option_A %>" ><%=option_A %><br>
   <input type="radio" name="answer1" value="<%=option_B %>"> <%=option_B%><br>
   <input type="radio" name="answer1" value="<%=option_C %>"> <%=option_C %><br>
