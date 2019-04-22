@@ -1,3 +1,4 @@
+<%@page import="com.morphosis.login.userSID"%>
 <%@page import="com.morphosis.quiz.CalScore"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.morphosis.quiz.DatabaseConnection"%>
@@ -68,6 +69,14 @@ else session.setAttribute("q1", 1);
    if(userId == null) {
       response.sendRedirect("login");
    }
+   int SID=(int)session.getAttribute("SID");
+   userSID usersid = new userSID();
+   int USID= usersid.getSID(userId);
+   if(USID!=SID)
+   {
+	   response.sendRedirect("logout");
+   }
+	   
 %>
 
 <title>Question 1</title>

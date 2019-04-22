@@ -1,3 +1,6 @@
+<%@page import="java.util.Random"%>
+<%@page import="com.morphosis.login.userSID"%>
+<%@page import="java.util.UUID"%>
 <%@page import="com.morphosis.dao.logindao"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -26,6 +29,12 @@ logindao dao = new logindao();
 		session.setAttribute("q1",0);
 		session.setAttribute("q2",0);
 		session.setAttribute("q3",0);
+		Random rand = new Random();
+		 int SID = rand.nextInt(10000); 
+		System.out.print(SID);
+		session.setAttribute("SID", SID);
+		userSID usersid=new userSID();
+		usersid.setSID(leader, SID);
 		response.sendRedirect("q1");
 	}
 	else {
