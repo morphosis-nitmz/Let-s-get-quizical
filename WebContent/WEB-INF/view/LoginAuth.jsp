@@ -23,6 +23,9 @@ logindao dao = new logindao();
 		
 		HttpSession sessHttpSession = request.getSession();
 		session.setAttribute("leader", leader);
+		session.setAttribute("q1",0);
+		session.setAttribute("q2",0);
+		session.setAttribute("q3",0);
 		response.sendRedirect("q1");
 	}
 	else {
@@ -32,6 +35,7 @@ logindao dao = new logindao();
         rd.forward(request, response);
 	}
 
+	
 
 
 %>

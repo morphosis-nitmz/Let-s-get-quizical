@@ -8,6 +8,14 @@
 <title>Your Score is</title>
 </head>
 <body>
+
+<%
+   String userId = (String) session.getAttribute("leader");
+   if(userId == null) {
+      response.sendRedirect("login");
+   }
+%>
+
 <%
    String answer3 = request.getParameter("answer3");
    String user=(String)session.getAttribute("leader");

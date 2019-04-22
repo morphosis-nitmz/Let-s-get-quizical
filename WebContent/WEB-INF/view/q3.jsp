@@ -7,8 +7,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
 
+
+<script type="text/javascript">
+
+(function (global) { 
+
+    if(typeof (global) === "undefined") {
+        throw new Error("window is undefined");
+    }
+
+    var _hash = "!";
+    var noBackPlease = function () {
+        global.location.href += "#";
+
+        // making sure we have the fruit available for juice (^__^)
+        global.setTimeout(function () {
+            global.location.href += "!";
+        }, 50);
+    };
+
+    global.onhashchange = function () {
+        if (global.location.hash !== _hash) {
+            global.location.hash = _hash;
+        }
+    };
+
+    global.onload = function () {            
+        noBackPlease();
+
+        // disables backspace on page except on input fields and textarea..
+        document.body.onkeydown = function (e) {
+            var elm = e.target.nodeName.toLowerCase();
+            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                e.preventDefault();
+            }
+            // stopping event bubbling up the DOM tree..
+            e.stopPropagation();
+        };          
+    }
+
+})(window);
+
+</script>
+
+<script type="text/javascript">
+var t = setTimeout("document.options.submit();",10000)
+</script>
+
+<% if((int)session.getAttribute("q3")==1)
+    response.sendRedirect("Ended");
+    
+else session.setAttribute("q3", 1);
+    %>
+
+
+
+<meta charset="ISO-8859-1">
+<%response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");%>
+<% response.setHeader("Pragma","no-cache");%> 
+<% response.setHeader("Cache-Control","no-store");%> 
+<% response.setDateHeader("Expires",-1);%> 
 <%
    String userId = (String) session.getAttribute("leader");
    if(userId == null) {
@@ -18,9 +77,7 @@
 
 
 <title>Question 3</title>
-<script language="JavaScript" type="text/javascript"> 
-var t = setTimeout("document.options.submit();",10000); //2 seconds measured in miliseconds
-</script>
+
 
 <script language="JavaScript" type="text/javascript">
 var timeleft = 10;
@@ -30,8 +87,9 @@ var downloadTimer = setInterval(function(){
   if(timeleft <= 0){
     clearInterval(downloadTimer);
     document.getElementById("countdown").innerHTML = "Finished"
-  }
+  } 
 }, 1000);
+
 </script>
 <div id="countdown"></div>
 
@@ -102,7 +160,6 @@ try {
   <br>
   
 </form>
-
 
 
 </body>

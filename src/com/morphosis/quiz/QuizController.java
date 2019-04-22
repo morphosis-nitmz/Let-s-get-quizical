@@ -63,4 +63,9 @@ public class QuizController {
 		return "afterlogin";
 	}
 
+	@RequestMapping("/Ended")
+	public String Ended(Model theModel) {
+		
+		return "Ended";
+	}
 }
