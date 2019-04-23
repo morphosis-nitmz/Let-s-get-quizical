@@ -1,0 +1,1 @@
+var t = setTimeout("document.options.submit();",10000); //2 seconds measured in miliseconds

@@ -34,7 +34,7 @@ public class QuizController {
 		
 		return "score";
 	}
-	@RequestMapping("/")
+	@RequestMapping("/SignUp")
 	public String SignUp(Model theModel) {
 		
 		return "SignUp";
@@ -68,4 +68,16 @@ public class QuizController {
 		
 		return "Ended";
 	}
+	
+	@RequestMapping("/scoreDisplay")
+	public String scoreDisplay(Model theModel) {
+		
+		return "scoreDisplay";
+	}
+	@RequestMapping("/")
+	public String home(Model theModel) {
+		
+		return "home";
+	}
+	
 }

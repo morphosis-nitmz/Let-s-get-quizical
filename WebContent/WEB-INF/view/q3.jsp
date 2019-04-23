@@ -1,4 +1,5 @@
 <%@page import="com.morphosis.login.userSID"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.morphosis.quiz.CalScore"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="com.morphosis.quiz.DatabaseConnection"%>
@@ -8,53 +9,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
-<script type="text/javascript">
-
-(function (global) { 
-
-    if(typeof (global) === "undefined") {
-        throw new Error("window is undefined");
-    }
-
-    var _hash = "!";
-    var noBackPlease = function () {
-        global.location.href += "#";
-
-        // making sure we have the fruit available for juice (^__^)
-        global.setTimeout(function () {
-            global.location.href += "!";
-        }, 50);
-    };
-
-    global.onhashchange = function () {
-        if (global.location.hash !== _hash) {
-            global.location.hash = _hash;
-        }
-    };
-
-    global.onload = function () {            
-        noBackPlease();
-
-        // disables backspace on page except on input fields and textarea..
-        document.body.onkeydown = function (e) {
-            var elm = e.target.nodeName.toLowerCase();
-            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
-                e.preventDefault();
-            }
-            // stopping event bubbling up the DOM tree..
-            e.stopPropagation();
-        };          
-    }
-
-})(window);
-
-</script>
-
-<script type="text/javascript">
-var t = setTimeout("document.options.submit();",10000)
-</script>
+<link href="<c:url value="/resources/css/button-style.css" />" rel="stylesheet">
+<script src="<c:url value="/resources/js/disable-back.js" />"></script>
+<script src="<c:url value="/resources/js/timer.js" />"></script>
 
 <% if((int)session.getAttribute("q3")==1)
     response.sendRedirect("Ended");
@@ -86,19 +43,6 @@ else session.setAttribute("q3", 1);
 
 <title>Question 3</title>
 
-
-<script language="JavaScript" type="text/javascript">
-var timeleft = 10;
-var downloadTimer = setInterval(function(){
-  document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
-  timeleft -= 1;
-  if(timeleft <= 0){
-    clearInterval(downloadTimer);
-    document.getElementById("countdown").innerHTML = "Finished"
-  } 
-}, 1000);
-
-</script>
 <div id="countdown"></div>
 
 </head>
@@ -157,18 +101,47 @@ try {
 
 %>
 
-
-<p><%=ques%></p>
-<br></br>
-<form name="options" action="score" method="post">
-  <input type="radio" name="answer3" value="<%=option_A %>" ><%=option_A %><br>
-  <input type="radio" name="answer3" value="<%=option_B %>"> <%=option_B%><br>
-  <input type="radio" name="answer3" value="<%=option_C %>"> <%=option_C %><br>
-  <input type="radio" name="answer3" value="<%=option_D %>"> <%=option_D %><br>
-  <br>
+<div class="container">
+	
+	<h2><%=ques%></h2>
+	 <form name="options" action="score" method="post">
+  <ul>
+ 
+  <li>
   
-</form>
+    <input type="radio" id="f-option" name="answer3" value="<%=option_A %>">
+    <label for="f-option"><%=option_A %></label>
+    
+    <div class="check"></div>
+  </li>
+  
+  <li>
+    <input type="radio" id="s-option" name="answer3" value="<%=option_B %>">
+    <label for="s-option"><%=option_B %></label>
+    
+    <div class="check"><div class="inside"></div></div>
+  </li>
+  
+  <li>
+    <input type="radio" id="t-option" name="answer3" value="<%=option_C %>">
+    <label for="t-option"><%=option_C %></label>
+    
+    <div class="check"><div class="inside"></div></div>
+    
+  </li>
+  
+   <li>
+    <input type="radio" id="u-option" name="answer3" value="<%=option_D %>">
+    <label for="u-option"><%=option_D %></label>
+    
+    <div class="check"><div class="inside"></div></div>
+    
+  </li>
 
+</ul>
+  </form>
+</div>
 
+<script src="<c:url value="/resources/js/auto-submit.js" />"></script>
 </body>
 </html>

@@ -20,7 +20,7 @@
 <div class="col-md-6">
 <div class="card">
 <header class="card-header">
-	<a href="/" class="float-right btn btn-outline-primary mt-1">SignUp</a>
+	<a href="SignUp" class="float-right btn btn-outline-primary mt-1">SignUp</a>
 	<h4 class="card-title mt-2">Login</h4>
 </header>
 <article class="card-body">
@@ -42,7 +42,7 @@
     </div> <!-- form-group// -->                                                
 </form>
 </article> <!-- card-body end .// -->
-<div class="border-top card-body text-center">Don't have an account? <a href="/">Sign Up</a></div>
+<div class="border-top card-body text-center">Don't have an account? <a href="SignUp">Sign Up</a></div>
 </div> <!-- card.// -->
 </div> <!-- col.//-->
 
