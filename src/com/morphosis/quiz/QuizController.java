@@ -34,10 +34,10 @@ public class QuizController {
 		
 		return "score";
 	}
-	@RequestMapping("/SignUp")
+	@RequestMapping("/register")
 	public String SignUp(Model theModel) {
 		
-		return "SignUp";
+		return "register";
 	}
 	
 	@RequestMapping("/after_reg")
@@ -46,10 +46,10 @@ public class QuizController {
 		return "after_reg";
 	}
 	
-	@RequestMapping("/login")
+	@RequestMapping("/login2")
 	public String login(Model theModel) {
 		
-		return "login";
+		return "login2";
 	}
 	@RequestMapping("/LoginAuth")
 	public String Loginauth(Model theModel) {
@@ -78,6 +78,34 @@ public class QuizController {
 	public String home(Model theModel) {
 		
 		return "home";
+	}
+	@RequestMapping("/header")
+	public String header(Model theModel) {
+		
+		return "header";
+	}
+	@RequestMapping("/logout")
+	public String logout(Model theModel) {
+		
+		return "logout";
+	}
+	
+	@RequestMapping("/contact")
+	public String contact(Model theModel) {
+		
+		return "contact";
+	}
+	
+	@RequestMapping("/goLive")
+	public String goLive(Model theModel) {
+		
+		return "goLive";
+	}
+	
+	@RequestMapping("/ComingSoon")
+	public String Coming(Model theModel) {
+		
+		return "ComingSoon";
 	}
 	
 }

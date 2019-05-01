@@ -53,12 +53,12 @@ try{
 	// TODO Auto-generated catch block
 	e.printStackTrace();	
 	request.setAttribute("errorMessage", "One or more Enrollment Number has already been registered in a team");
-	RequestDispatcher rd = request.getRequestDispatcher("SignUp.jsp");
+	RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
     rd.forward(request, response);
 }
 
 request.setAttribute("Success", "Successfully Registered ! login now");
-RequestDispatcher rd = request.getRequestDispatcher("SignUp.jsp");
+RequestDispatcher rd = request.getRequestDispatcher("login2.jsp");
 rd.forward(request, response);
 
 %>

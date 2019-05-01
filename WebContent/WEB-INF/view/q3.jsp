@@ -14,7 +14,7 @@
 <script src="<c:url value="/resources/js/timer.js" />"></script>
 
 <% if((int)session.getAttribute("q3")==1)
-    response.sendRedirect("Ended");
+    response.sendRedirect("logout");
     
 else session.setAttribute("q3", 1);
     %>

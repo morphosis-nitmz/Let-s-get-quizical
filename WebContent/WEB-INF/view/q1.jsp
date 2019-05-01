@@ -15,7 +15,7 @@
 
 
 <% if((int)session.getAttribute("q1")==1)
-    response.sendRedirect("Ended");
+    response.sendRedirect("logout");
     
 else session.setAttribute("q1", 1);
     %>

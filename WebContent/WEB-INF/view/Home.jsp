@@ -1,368 +1,396 @@
-
+<%@page import="com.morphosis.login.userSID"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
-<html lang="zxx">
-<head>
-	<title>EndGam - Gaming Magazine Template</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="EndGam Gaming Magazine Template">
-	<meta name="keywords" content="endGam,gGaming, magazine, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->
-	<link href="<c:url value="/resources/img/favicon.ico" />" rel="shortcut icon"/>
+<html lang="en">
+  <head>
+    <title>Let's get Quizzical</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet">
 
+    <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/animate.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/css/owl.carousel.min.css" />">
 
-	<!-- Stylesheets -->
-	<link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
-	<link href="<c:url value="/resources/css/font-awesome.min.css" />" rel="stylesheet">
-	<link href="<c:url value="/resources/css/slicknav.min.css" />" rel="stylesheet">
-	<link href="<c:url value="/resources/css/owl.carousel.min.css" />" rel="stylesheet">
-	<link href="<c:url value="/resources/css/magnific-popup.css" />" rel="stylesheet">
-	<link href="<c:url value="/resources/css/animate.css" />" rel="stylesheet">
+    <link rel="stylesheet" href="<c:url value="/resources/fonts/ionicons/css/ionicons.min.css" /> ">
+    <link rel="stylesheet" href="<c:url value="/resources/fonts/fontawesome/css/font-awesome.min.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/fonts/flaticon/font/flaticon.css" />" >
 
-	<!-- Main Stylesheets -->
-	<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css" />">
 
+    
+  </head>
+  <body>
+    
+    <header role="banner">
+     
+      <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container">
+          <a class="navbar-brand absolute" href="index.html">Let's Get Quizzical</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-	<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="courses.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Online Courses</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="courses.html">HTML</a>
+                  <a class="dropdown-item" href="courses.html">WordPress</a>
+                  <a class="dropdown-item" href="courses.html">Web Development</a>
+                  <a class="dropdown-item" href="courses.html">Javascript</a>
+                  <a class="dropdown-item" href="courses.html">Photoshop</a>
+                </div>
 
-</head>
-<body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
+              </li>
 
-	<!-- Header section -->
-	<header class="header-section">
-		<div class="header-warp">
-			<div class="header-social d-flex justify-content-end">
-				<p>Follow us:</p>
-				<a href="#"><i class="fa fa-pinterest"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-dribbble"></i></a>
-				<a href="#"><i class="fa fa-behance"></i></a>
-			</div>
-			<div class="header-bar-warp d-flex">
-				<!-- site logo -->
-				<a href="home.html" class="site-logo">
-					<img src="<c:url value="/resources/img/logo.png" />" alt="">
-				</a>
-				<nav class="top-nav-area w-100">
-					<div class="user-panel">
-						<a href="login">Login</a> / <a href="SignUp">Register</a>
-					</div>
-					<!-- Menu -->
-					<ul class="main-menu primary-menu">
-						<li><a href="home.html">Home</a></li>
-						<li><a href="games.html">Games</a>
-							<ul class="sub-menu">
-								<li><a href="game-single.html">Game Singel</a></li>
-							</ul>
-						</li>
-						<li><a href="review.html">Reviews</a></li>
-						<li><a href="blog.html">News</a></li>
-						<li><a href="contact.html">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
-	<!-- Header section end -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown05">
+                  <a class="dropdown-item" href="#">HTML</a>
+                  <a class="dropdown-item" href="#">WordPress</a>
+                  <a class="dropdown-item" href="#">Web Development</a>
+                  <a class="dropdown-item" href="#">Javascript</a>
+                  <a class="dropdown-item" href="#">Photoshop</a>
+                </div>
 
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact">Contact</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav absolute-right">
+              <li class="nav-item">
+              <% String userId = (String) session.getAttribute("leader");
+              if(userId == null){%>
+                <a href="login2" class="nav-link"> Login </a>
+                <%}
+              else { %> <a href="profile" class="nav-link"> <%= userId %> </a> <%
+               } %>
+        
+              </li>
+              <li class="nav-item">
+             <% if(userId == null){%>
+                <a href="register" class="nav-link">Register</a>
+                <% } 
+             else { %> <a href="logout" class="nav-link">Logout</a> <% }
+            	 %>
+                
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END header -->
 
-	<!-- Hero section -->
-	<section class="hero-section overflow-hidden">
-		<div class="hero-slider owl-carousel">
-			<div class="hero-item set-bg d-flex align-items-center justify-content-center text-center" data-setbg="<c:url value="/resources/img/slider-bg-1.jpg" />">
-				<div class="container">
-					<h2>Game on!</h2>
-					<p>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus. Donec vitae tempus dolor,<br>sit amet elementum lorem. Ut cursus tempor turpis.</p>
-					<a href="#" class="site-btn">Read More  <img src="<c:url value="/resources/img/icons/double-arrow.png" />" alt="#"></a>
-				</div>
-			</div>
-			<div class="hero-item set-bg d-flex align-items-center justify-content-center text-center" data-setbg="<c:url value="/resources/img/slider-bg-2.jpg" />">
-				<div class="container">
-					<h2>Game on!</h2>
-					<p>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus. Donec vitae tempus dolor,<br>sit amet elementum lorem. Ut cursus tempor turpis.</p>
-					<a href="#" class="site-btn">Read More  <img src="<c:url value="/resources/img/icons/double-arrow.png" />" alt="#"/></a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Hero section end-->
+   <section class="site-hero overlay" data-stellar-background-ratio="0.5" style="background-image: url(resources/img/smart-kids.jpg);">
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center">
+          <div class="col-md-8 text-center">
 
+            <div class="mb-5 element-animate">
+              <h1>Let's get Quizzical</h1>
+              <p class="lead">Let's get quizzical in the season to answer questions, swaggering and recalling.</p>
+              <p><a href="ComingSoon" class="btn btn-primary">Start the Quiz!</a></p>
+            </div>
 
-	<!-- Intro section -->
-	<section class="intro-section">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<div class="intro-text-box text-box text-white">
-						<div class="top-meta">11.11.18  /  in <a href="">Games</a></div>
-						<h3>The best online game is out now!</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida....</p>
-						<a href="#" class="read-more">Read More  <img src="<c:url value="/resources/img/icons/double-arrow.png" />" alt="#"/></a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="intro-text-box text-box text-white">
-						<div class="top-meta">11.11.18  /  in <a href="">Playstation</a></div>
-						<h3>Top 5 best games in november</h3>
-						<p>Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum  labore suspendisse ultrices gravida....</p>
-						<a href="#" class="read-more">Read More  <img src="<c:url value="/resources/img/icons/double-arrow.png" />" alt="#"/></a>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="intro-text-box text-box text-white">
-						<div class="top-meta">11.11.18  /  in <a href="">Reviews</a></div>
-						<h3>Get this game at a promo price</h3>
-						<p>Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida ncididunt ut labore ....</p>
-						<a href="#" class="read-more">Read More  <img src="<c:url value="/resources/img/icons/double-arrow.png" />" alt="#"/></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Intro section end -->
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
 
+    
+    <section class="school-features d-flex" style="background-image: url(resources/img/big_image_3.jpg);">
 
-	<!-- Blog section -->
-	<section class="blog-section spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-xl-9 col-lg-8 col-md-7">
-					<div class="section-title text-white">
-						<h2>Latest News</h2>
-					</div>
-					<ul class="blog-filter">
-						<li><a href="#">Racing</a></li>
-						<li><a href="#">Shooters</a></li>
-						<li><a href="#">Strategy</a></li>
-						<li><a href="#">Online</a></li>
-					</ul>
-					<!-- Blog item -->
-					<div class="blog-item">
-						<div class="blog-thumb">
-							<img src="<c:url value="/resources/img/blog/1.jpg" />" alt="">
-						</div>
-						<div class="blog-text text-box text-white">
-							<div class="top-meta">11.11.18  /  in <a href="">Games</a></div>
-							<h3>The best online game is out now!</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius-mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consecte-tur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.....</p>
-							<a href="#" class="read-more">Read More  <img src="<c:url value="/resources/img/icons/double-arrow.png" />" alt="#"/></a>
-						</div>
-					</div>
-					<!-- Blog item -->
-					<div class="blog-item">
-						<div class="blog-thumb">
-							<img src="<c:url value="/resources/img/blog/2.jpg" />" alt="">
-						</div>
-						<div class="blog-text text-box text-white">
-							<div class="top-meta">11.11.18  /  in <a href="">Games</a></div>
-							<h3>The best online game is out now!</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius-mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consecte-tur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.....</p>
-							<a href="#" class="read-more">Read More  <img src="<c:url value="/resources/img/icons/double-arrow.png" />" alt="#"/></a>
-						</div>
-					</div>
-					<!-- Blog item -->
-					<div class="blog-item">
-						<div class="blog-thumb">
-							<img src="<c:url value="/resources/img/blog/3.jpg" />" alt="">
-						</div>
-						<div class="blog-text text-box text-white">
-							<div class="top-meta">11.11.18  /  in <a href="">Games</a></div>
-							<h3>The best online game is out now!</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius-mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consecte-tur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.....</p>
-							<a href="#" class="read-more">Read More  <img src="<c:url value="/resources/img/icons/double-arrow.png" />" alt="#"/></a>
-						</div>
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-4 col-md-5 sidebar">
-					<div id="stickySidebar">
-						<div class="widget-item">
-							<h4 class="widget-title">Trending</h4>
-							<div class="trending-widget">
-								<div class="tw-item">
-									<div class="tw-thumb">
-										<img src="<c:url value="/resources/img/blog-widget/1.jpg" />" alt="#">
-									</div>
-									<div class="tw-text">
-										<div class="tw-meta">11.11.18  /  in <a href="">Games</a></div>
-										<h5>The best online game is out now!</h5>
-									</div>
-								</div>
-								<div class="tw-item">
-									<div class="tw-thumb">
-										<img src="<c:url value="/resources/img/blog-widget/2.jpg" />" alt="#">
-									</div>
-									<div class="tw-text">
-										<div class="tw-meta">11.11.18  /  in <a href="">Games</a></div>
-										<h5>The best online game is out now!</h5>
-									</div>
-								</div>
-								<div class="tw-item">
-									<div class="tw-thumb">
-										<img src="<c:url value="/resources/img/blog-widget/3.jpg" />" alt="#">
-									</div>
-									<div class="tw-text">
-										<div class="tw-meta">11.11.18  /  in <a href="">Games</a></div>
-										<h5>The best online game is out now!</h5>
-									</div>
-								</div>
-								<div class="tw-item">
-									<div class="tw-thumb">
-										<img src="<c:url value="/resources/img/blog-widget/4.jpg" />" alt="#">
-									</div>
-									<div class="tw-text">
-										<div class="tw-meta">11.11.18  /  in <a href="">Games</a></div>
-										<h5>The best online game is out now!</h5>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="widget-item">
-							<div class="categories-widget">
-								<h4 class="widget-title">categories</h4>
-								<ul>
-									<li><a href="">Games</a></li>
-									<li><a href="">Gaming Tips & Tricks</a></li>
-									<li><a href="">Online Games</a></li>
-									<li><a href="">Team Games</a></li>
-									<li><a href="">Community</a></li>
-									<li><a href="">Uncategorized</a></li>
-								</ul>
-							</div>
-						</div>
-						<div class="widget-item">
-						<a href="#" class="add">
-							<img src="<c:url value="/resources/img/add.jpg" />" alt="">
-						</a>
-					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Blog section end -->
+      <div class="inner">
+        <div class="media d-block feature">
+          <div class="icon"><span class="flaticon-video-call"></span></div>
+          <div class="media-body">
+            <h3 class="mt-0">Online trainings from experts</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora fuga suscipit numquam esse saepe quam, eveniet iure assumenda dignissimos aliquam!</p>
+          </div>
+        </div>
+
+        <div class="media d-block feature">
+          <div class="icon"><span class="flaticon-student"></span></div>
+          <div class="media-body">
+            <h3 class="mt-0">Learn anywhere in the world</h3>
+            <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
+          </div>
+        </div>
+
+        <div class="media d-block feature">
+          <div class="icon"><span class="flaticon-video-player-1"></span></div>
+          <div class="media-body">
+            <h3 class="mt-0">Creative learning video</h3>
+            <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
+          </div>
+        </div>
 
 
-	<!-- Intro section -->
-	<section class="intro-video-section set-bg d-flex align-items-end " data-setbg="<c:url value="/resources/img/promo-bg.jpg" />">
-		<a href="https://www.youtube.com/watch?v=uFsGy5x_fyQ" class="video-play-btn video-popup"><img src="<c:url value="/resources/img/icons/solid-right-arrow.png" />" alt="#"></a>
-		<div class="container">
-			<div class="video-text">
-				<h2>Promo video of the game</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
-			</div>
-		</div>
-	</section>
-	<!-- Intro section end -->
+        <div class="media d-block feature">
+          <div class="icon"><span class="flaticon-audiobook"></span></div>
+          <div class="media-body">
+            <h3 class="mt-0">Audio learning</h3>
+            <p>Harum, adipisci, aspernatur. Vero repudiandae quos ab debitis, fugiat culpa obcaecati, voluptatibus ad distinctio cum soluta fugit sed animi eaque?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
 
 
-	<!-- Featured section -->
-	<section class="featured-section">
-		<div class="featured-bg set-bg" data-setbg="<c:url value="/resources/img/featured-bg.jpg" />"></div>
-		<div class="featured-box">
-			<div class="text-box">
-				<div class="top-meta">11.11.18  /  in <a href="">Games</a></div>
-				<h3>The game you’ve been waiting  for is out now</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquamet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum posuere porttitor justo id pellentesque. Proin id lacus feugiat, posuere erat sit amet, commodo ipsum. Donec pellentesque vestibulum metus...</p>
-				<a href="#" class="read-more">Read More  <img src="<c:url value="/resources/img/icons/double-arrow.png" />" alt="#"/></a>
-			</div>
-		</div>
-	</section>
-	<!-- Featured section end-->
+    <section class="site-section">
+      <div class="container">
+        <section class="school-features text-dark d-flex">
+
+          <div class="inner">
+            <div class="media d-block feature">
+              <div class="icon"><span class="flaticon-video-call"></span></div>
+              <div class="media-body">
+                <h3 class="mt-0">Online trainings from experts</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora fuga suscipit numquam esse saepe quam, eveniet iure assumenda dignissimos aliquam!</p>
+              </div>
+            </div>
+
+            <div class="media d-block feature">
+              <div class="icon"><span class="flaticon-student"></span></div>
+              <div class="media-body">
+                <h3 class="mt-0">Learn anywhere in the world</h3>
+                <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
+              </div>
+            </div>
+
+            <div class="media d-block feature">
+              <div class="icon"><span class="flaticon-video-player-1"></span></div>
+              <div class="media-body">
+                <h3 class="mt-0">Creative learning video</h3>
+                <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
+              </div>
+            </div>
 
 
+            <div class="media d-block feature">
+              <div class="icon"><span class="flaticon-audiobook"></span></div>
+              <div class="media-body">
+                <h3 class="mt-0">Audio learning</h3>
+                <p>Harum, adipisci, aspernatur. Vero repudiandae quos ab debitis, fugiat culpa obcaecati, voluptatibus ad distinctio cum soluta fugit sed animi eaque?</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-	<!-- Newsletter section -->
-	<section class="newsletter-section">
-		<div class="container">
-			<h2>Subscribe to our newsletter</h2>
-			<form class="newsletter-form">
-				<input type="text" placeholder="ENTER YOUR E-MAIL">
-				<button class="site-btn">subscribe  <img src="<c:url value="/resources/img/icons/double-arrow.png" />" alt="#"/></button>
-			</form>
-		</div>
-	</section>
-	<!-- Newsletter section end -->
+        <section class="school-features text-dark last d-flex">
 
+          <div class="inner">
+            <div class="media d-block feature">
+              <div class="icon"><span class="flaticon-student-1"></span></div>
+              <div class="media-body">
+                <h3 class="mt-0">Online trainings from experts</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora fuga suscipit numquam esse saepe quam, eveniet iure assumenda dignissimos aliquam!</p>
+              </div>
+            </div>
 
-	<!-- Footer section -->
-	<footer class="footer-section">
-		<div class="container">
-			<div class="footer-left-pic">
-				<img src="<c:url value="/resources/img/footer-left-pic.png" />" alt="">
-			</div>
-			<div class="footer-right-pic">
-				<img src="<c:url value="/resources/img/footer-right-pic.png" />" alt="">
-			</div>
-			<a href="#" class="footer-logo">
-				<img src="<c:url value="/resources/img/logo.png" />" alt="">
-			</a>
-			<ul class="main-menu footer-menu">
-				<li><a href="">Home</a></li>
-				<li><a href="">Games</a></li>
-				<li><a href="">Reviews</a></li>
-				<li><a href="">News</a></li>
-				<li><a href="">Contact</a></li>
-			</ul>
-			<div class="footer-social d-flex justify-content-center">
-				<a href="#"><i class="fa fa-pinterest"></i></a>
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-dribbble"></i></a>
-				<a href="#"><i class="fa fa-behance"></i></a>
-			</div>
-			<div class="copyright"><a href="">Colorlib</a> 2018 @ All rights reserved</div>
-		</div>
-	</footer>
-	<!-- Footer section end -->
+            <div class="media d-block feature">
+              <div class="icon"><span class="flaticon-interface"></span></div>
+              <div class="media-body">
+                <h3 class="mt-0">Learn anywhere in the world</h3>
+                <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
+              </div>
+            </div>
+
+            <div class="media d-block feature">
+              <div class="icon"><span class="flaticon-book"></span></div>
+              <div class="media-body">
+                <h3 class="mt-0">Creative learning video</h3>
+                <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
+              </div>
+            </div>
 
 
-	<!--====== Javascripts & Jquery ======-->
-    <script src="<c:url value="/resources/js/jquery-3.2.1.min.js" />"></script>
-    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
-    <script src="<c:url value="/resources/js/jquery.slicknav.min.js" />"></script>
-    <script src="<c:url value="/resources/js/owl.carousel.min.js" />"></script>
-    <script src="<c:url value="/resources/js/jquery.sticky-sidebar.min.js" />"></script>
-    <script src="<c:url value="/resources/js/jquery.magnific-popup.min.js" />"></script>
-    <script src="<c:url value="/resources/js/main.js" />"></script>
-    <script type="text/javascript">
-    	$('.hero-slider').owlCarousel({
-		loop: true,
-		nav: true,
-		dots: true,
-		navText: ['', '<img src="<c:url value="/resources/img/icons/solid-right-arrow.png" />">'],
-		mouseDrag: false,
-		animateOut: 'fadeOut',
-		animateIn: 'fadeIn',
-		items: 1,
-		//autoplay: true,
-		autoplayTimeout: 10000,
-	});
-
-    	var dot = $('.hero-slider .owl-dot');
-    	dot.each(function() {
-    		var index = $(this).index() + 1;
-    		if(index < 10){
-    			$(this).html('0').append(index + '.');
-    		}else{
-    			$(this).html(index + '.');
-    		}
-    	});
+            <div class="media d-block feature">
+              <div class="icon"><span class="flaticon-geography"></span></div>
+              <div class="media-body">
+                <h3 class="mt-0">Audio learning</h3>
+                <p>Harum, adipisci, aspernatur. Vero repudiandae quos ab debitis, fugiat culpa obcaecati, voluptatibus ad distinctio cum soluta fugit sed animi eaque?</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
 
-    	
-    	</script>
-	</body>
+      </div>
+    </section>
+    <!-- END section -->
+
+    <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(resources/img/big_image_3.jpg);">
+      <div class="container">
+        <div class="row justify-content-center align-items-center intro">
+          <div class="col-md-7 text-center element-animate">
+            <h2>Sign Up And Get a 7-day Free Trial</h2>
+            <p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quidem tempore expedita facere facilis, dolores!</p>
+            <p><a href="ComingSoon" class="btn btn-primary">Start the Quiz!</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+
+    <section class="site-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-7 text-center">
+            <h2>Top Courses</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum magnam illum maiores adipisci pariatur, eveniet.</p>
+          </div>
+        </div>
+        <div class="row top-course">
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="#" class="course">
+              <img src="resources/img/webdesign.jpg" alt="Image placeholder">
+              <h2>Web Design 101</h2>
+              <p>Enroll Now</p>
+            </a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="#" class="course">
+              <img src="resources/img/wordpress.jpg" alt="Image placeholder">
+              <h2>Learn How To Develop WordPress Plugin</h2>
+              <p>Enroll Now</p>
+            </a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="#" class="course">
+              <img src="resources/img/javascript.jpg" alt="Image placeholder">
+              <h2>JavaScript 101</h2>
+              <p>Enroll Now</p>
+            </a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="#" class="course">
+              <img src="resources/img/photoshop.jpg" alt="Image placeholder">
+              <h2>Photoshop Design 101</h2>
+              <p>Enroll Now</p>
+            </a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="#" class="course">
+              <img src="resources/img/reactjs.jpg" alt="Image placeholder">
+              <h2>Learn Native ReactJS</h2>
+              <p>Enroll Now</p>
+            </a>
+          </div>
+          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
+            <a href="#" class="course">
+              <img src="resources/img/angularjs.jpg" alt="Image placeholder">
+              <h2>Learn AngularJS 2</h2>
+              <p>Enroll Now</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+  
+    <section class="overflow">
+      <div class="container">
+        <div class="row justify-content-center align-items-center">
+          
+          
+          <div class="col-lg-7 order-lg-3 order-1 mb-lg-0 mb-5">
+            <img src=resources/img/person_testimonial_1.jpg" alt="Image placeholder" class="img-md-fluid">
+          </div>
+          <div class="col-lg-1 order-lg-2"></div>
+          <div class="col-lg-4 order-lg-1 order-2 mb-lg-0 mb-5">
+            <blockquote class="testimonial">
+              &ldquo; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt incidunt nihil ab cumque molestiae commodi. &rdquo;
+            </blockquote>
+            <p>&mdash; John Doe, Certified ReactJS Student</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+  
+    <footer class="site-footer" style="background-image: url(resources/img/big_image_3.jpg);">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <h3>About</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, accusantium optio unde perferendis eum illum voluptatibus dolore tempora, consequatur minus asperiores temporibus reprehenderit.</p>
+          </div>
+          <div class="col-md-6 ml-auto">
+            <div class="row">
+              <div class="col-md-4">
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Company</a></li>
+                  <li><a href="#">Teachers</a></li>
+                  <li><a href="#">Courses</a></li>
+                  <li><a href="#">Categories</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Company</a></li>
+                  <li><a href="#">Teachers</a></li>
+                  <li><a href="#">Courses</a></li>
+                  <li><a href="#">Categories</a></li>
+                </ul>
+              </div>
+              <div class="col-md-4">
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Company</a></li>
+                  <li><a href="#">Teachers</a></li>
+                  <li><a href="#">Courses</a></li>
+                  <li><a href="#">Categories</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer -->
+    
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+    <script src="<c:url value="/resources/js/website/jquery-3.2.1.min.js" />" ></script>
+    <script src="<c:url value="/resources/js/website/jquery-migrate-3.0.0.js" /> "></script>
+    <script src="<c:url value="/resources/js/website/popper.min.js" /> "></script>
+    <script src="<c:url value="/resources/js/website/bootstrap.min.js" />"></script>
+    <script src="<c:url value="/resources/js/website/owl.carousel.min.js" />"></script>
+    <script src="<c:url value="/resources/js/website/jquery.waypoints.min.js" />"></script>
+    <script src="<c:url value="/resources/js/website/jquery.stellar.min.js" />"></script>
+
+    
+    <script src="<c:url value="/resources/js/website/main.js" />"></script>
+  </body>
 </html>

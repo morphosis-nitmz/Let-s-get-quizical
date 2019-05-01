@@ -1,0 +1,6 @@
+body, html{
+  height: 100%;
+ background: #643559;  /* fallback for old browsers */
+
+  font-family: 'Lato', sans-serif;
+}

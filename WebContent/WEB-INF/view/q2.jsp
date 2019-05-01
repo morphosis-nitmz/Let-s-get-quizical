@@ -14,7 +14,7 @@
 <script src="<c:url value="/resources/js/disable-back.js" />"></script>
 
 <% if((int)session.getAttribute("q2")==1)
-    response.sendRedirect("Ended");
+    response.sendRedirect("logout");
     
 else session.setAttribute("q2", 1);
     %>

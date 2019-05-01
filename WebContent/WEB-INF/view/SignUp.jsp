@@ -11,8 +11,8 @@
 <div class="container">
 
 <hr>
-
-
+<html>
+<title> SignUp</title>
 <div class="row justify-content-center">
 <div class="col-md-6">
 <div class="card">
@@ -87,3 +87,4 @@
         out.println(request.getAttribute("errorMessage"));
     }
 %>
+</html>

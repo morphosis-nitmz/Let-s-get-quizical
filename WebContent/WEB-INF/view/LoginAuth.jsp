@@ -35,12 +35,12 @@ logindao dao = new logindao();
 		session.setAttribute("SID", SID);
 		userSID usersid=new userSID();
 		usersid.setSID(leader, SID);
-		response.sendRedirect("q1");
+		response.sendRedirect("ComingSoon");
 	}
 	else {
 		request.setAttribute("errorMessage", "Invalid user or password");
 		//response.sendRedirect("login.jsp");
-		RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("login2.jsp");
         rd.forward(request, response);
 	}
 
