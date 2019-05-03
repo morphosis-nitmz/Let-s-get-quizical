@@ -6,14 +6,16 @@
 <%
    String userId = (String) session.getAttribute("leader");
    if(userId == null) {
-      response.sendRedirect("login");
+      response.sendRedirect("login2");
    }
+   else{
    int SID=(int)session.getAttribute("SID");
    userSID usersid = new userSID();
    int USID= usersid.getSID(userId);
    if(USID!=SID)
    {
 	   response.sendRedirect("logout");
+   }
    }
 %>
 
@@ -27,5 +29,5 @@
 
    }
    
-   response.sendRedirect("scoreDisplay");
+   response.sendRedirect("leaderboard");
 	    %>

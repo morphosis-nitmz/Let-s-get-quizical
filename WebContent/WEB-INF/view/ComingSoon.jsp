@@ -61,17 +61,12 @@
 				</div>
 			</div>
 
-			<form class="w-full flex-w flex-c-m validate-form">
+			<form class="checkbox" action="q1" method="post">
 
-				<div class="wrap-input100 validate-input where1" data-validate = "Valid email is required: ex@abc.xyz">
-					<input class="input100 placeholder0 s2-txt2" type="text" name="email" placeholder="Enter Email Address">
-					<span class="focus-input100"></span>
-				</div>
-				
-				
-				<button class="flex-c-m size3 s2-txt3 how-btn1 trans-04 where1">
-					Subscribe
-				</button>
+       
+       <input type="checkbox" id="t-option" name="checkbox" value="true"> <p>Click on this check box if you agree to our rules and regulations.  </p>
+          
+			<p>Note: Checkbox must be checked before game starts.</p>
 			</form>
 		</div>
 	</div>
@@ -98,9 +93,9 @@
 			/*Endtime must be > current time*/
 			endtimeYear: 2019,
 			endtimeMonth: 05,
-			endtimeDate: 02,
-			endtimeHours: 0,
-			endtimeMinutes: 51,
+			endtimeDate: 03,
+			endtimeHours: 23,
+			endtimeMinutes: 30,
 			endtimeSeconds: 0,
 			timeZone: "Asia/Kolkata" 
 			// ex:  timeZone: "America/New_York"

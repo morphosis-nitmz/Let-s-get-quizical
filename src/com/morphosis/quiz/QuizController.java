@@ -107,5 +107,15 @@ public class QuizController {
 		
 		return "ComingSoon";
 	}
+	@RequestMapping("/leaderboard")
+	public String Leaderboard(Model theModel) {
+		
+		return "leaderboard";
+	}
 	
+	@RequestMapping("/demo")
+	public String demo(Model theModel) {
+		
+		return "demo";
+	}
 }

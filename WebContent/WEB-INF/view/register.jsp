@@ -20,68 +20,20 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css" />">
   </head>
   <body>
-    <header role="banner">
-     
-      <nav class="navbar navbar-expand-md navbar-dark bg-light">
-        <div class="container">
-          <a class="navbar-brand absolute" href="index.html">Skwela</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <%if(null!=request.getAttribute("PassError"))
+    {
+        out.println(request.getAttribute("PassError"));
+    }
+%>
 
-          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="courses.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Online Courses</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="courses.html">HTML</a>
-                  <a class="dropdown-item" href="courses.html">WordPress</a>
-                  <a class="dropdown-item" href="courses.html">Web Development</a>
-                  <a class="dropdown-item" href="courses.html">Javascript</a>
-                  <a class="dropdown-item" href="courses.html">Photoshop</a>
-                </div>
-
-              </li>
-
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown05">
-                  <a class="dropdown-item" href="#">HTML</a>
-                  <a class="dropdown-item" href="#">WordPress</a>
-                  <a class="dropdown-item" href="#">Web Development</a>
-                  <a class="dropdown-item" href="#">Javascript</a>
-                  <a class="dropdown-item" href="#">Photoshop</a>
-                </div>
-
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="blog.html">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav absolute-right">
-              <li class="nav-item">
-                <a href="login2" class="nav-link">Login</a>
-              </li>
-              <li class="nav-item">
-                <a href="register" class="nav-link active">Register</a>
-              </li>
-            </ul>
-            
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- END header -->
-
+   
+         <%if(null!=request.getAttribute("errorMessage"))
+    {
+        out.println(request.getAttribute("errorMessage"));
+    }
+%>
+   <jsp:include page="header.jsp" />
+   
     <section class="site-hero site-hero-innerpage overlay" data-stellar-background-ratio="0.5" style="background-image: url(resources/img/big_image_1.jpg);">
       <div class="container">
         <div class="row align-items-center site-hero-inner justify-content-center">
@@ -135,36 +87,25 @@
 		  	<input type="text" name="mem_enroll2" class="form-control" placeholder=" " required>
 		</div> <!-- form-group end.// -->
 	</div> <!-- form-row end.// -->
-	<div class="form-row">
-		<div class="col form-group">
-			<label>Member name </label>   
-		  	<input type="text" name="member3" class="form-control" placeholder="" required>
-		</div> <!-- form-group end.// -->
-		<div class="col form-group">
-			<label>Enrollment number</label>
-		  	<input type="text" name="mem_enroll3"class="form-control" placeholder=" " required>
-		</div> <!-- form-group end.// -->
-	</div> <!-- form-row end.// -->
 	<div class="form-group">
 		<label>Create password</label>
 	    <input class="form-control" type="password" name="password" required>
 	</div> <!-- form-group end.// -->  
+	<div class="form-group">
+		<label>Confirm password</label>
+	    <input class="form-control" type="password" name="ConfPass" required>
+	</div> <!-- form-group end.// -->
     <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block"> Register  </button>
     </div> <!-- form-group// -->      
     <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>                                          
 </form>      
-<div class="border-top card-body text-center">Have an account? <a href="login">Log In</a></div>
+<div class="border-top card-body text-center">Have an account? <a href="login2">Log In</a></div>
           </div>
         </div>
       </div>
     </section>
-    
-         <%if(null!=request.getAttribute("errorMessage"))
-    {
-        out.println(request.getAttribute("errorMessage"));
-    }
-%>
+ 
     <!-- END section -->
 
      <section class="overflow">

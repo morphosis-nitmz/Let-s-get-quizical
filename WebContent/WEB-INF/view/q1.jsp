@@ -14,23 +14,14 @@
 <script src="<c:url value="/resources/js/disable-back.js" />"></script>
 
 
-<% if((int)session.getAttribute("q1")==1)
-    response.sendRedirect("logout");
-    
-else session.setAttribute("q1", 1);
-    %>
-
-<meta charset="ISO-8859-1">
-<%response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");%>
-<% response.setHeader("Pragma","no-cache");%> 
-<% response.setHeader("Cache-Control","no-store");%> 
-<% response.setDateHeader("Expires",-1);%> 
-
 <%
-   String userId = (String) session.getAttribute("leader");
-   if(userId == null) {
-      response.sendRedirect("login");
+   String userId= (String)session.getAttribute("leader");
+   if(session.getAttribute("leader")== null) {
+	   System.out.println(userId);
+      response.sendRedirect("login2");
    }
+   else{
+  
    int SID=(int)session.getAttribute("SID");
    userSID usersid = new userSID();
    int USID= usersid.getSID(userId);
@@ -38,8 +29,29 @@ else session.setAttribute("q1", 1);
    {
 	   response.sendRedirect("logout");
    }
-	   
+   
+   if((int)session.getAttribute("q1")==1)
+	    response.sendRedirect("logout");
+	    
+	else session.setAttribute("q1", 1);
+   } 
 %>
+
+<%
+String checkbox=request.getParameter("checkbox");
+if(request.getParameter("checkbox")==null)
+{
+	System.out.println("null");
+}
+%>
+
+<meta charset="ISO-8859-1">
+<%response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");%>
+<% response.setHeader("Pragma","no-cache");%> 
+<% response.setHeader("Cache-Control","no-store");%> 
+<% response.setDateHeader("Expires",-1);%> 
+
+
 
 <title>Question 1</title>
 

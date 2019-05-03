@@ -12,17 +12,18 @@
 <body>
 
 <%
+String confPass= request.getParameter("ConfPass");
+String password= request.getParameter("password"); 
+if(confPass.equals(password))
+{
 try{
 	int id=0;
 	String leader_enroll=request.getParameter("leader_enroll");
 	String leader =request.getParameter("leader");
-	String password= request.getParameter("password"); 
 	String member1=request.getParameter("member1");
 	String mem_enroll1=request.getParameter("mem_enroll1");
 	String member2=request.getParameter("member2");
 	String mem_enroll2=request.getParameter("mem_enroll2");
-	String member3=request.getParameter("member3");
-	String mem_enroll3=request.getParameter("mem_enroll3");
 	Statement s=DatabaseConnection.getConnection();
 	Statement s2=DatabaseConnection.getConnection();
 	Statement s3=DatabaseConnection.getConnection();
@@ -41,11 +42,9 @@ try{
 	System.out.println(id);
 	String sql2="insert into registration(id,enrollment,name) values('"+id+"','"+mem_enroll1+"','"+member1+"')";
 	String sql3="insert into registration(id,enrollment,name) values('"+id+"','"+mem_enroll2+"','"+member2+"')";
-	String sql4="insert into registration(id,enrollment,name) values('"+id+"','"+mem_enroll3+"','"+member3+"')";
 	String sql6="insert into registration(id,enrollment,name) values('"+id+"','"+leader_enroll+"','"+leader+"')";
 	int rs3=s3.executeUpdate(sql2);
 	int rs4=s4.executeUpdate(sql3);
-	int rs5=s5.executeUpdate(sql4);
 	int rs6=s6.executeUpdate(sql6);
 	DatabaseConnection.getCloseConnection();
 	
@@ -60,7 +59,13 @@ try{
 request.setAttribute("Success", "Successfully Registered ! login now");
 RequestDispatcher rd = request.getRequestDispatcher("login2.jsp");
 rd.forward(request, response);
-
+}
+else
+{
+	request.setAttribute("PassError", "Please Re enter the password correctly");
+	RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+	rd.forward(request, response);
+}
 %>
 
 

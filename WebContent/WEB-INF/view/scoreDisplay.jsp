@@ -12,7 +12,7 @@
 <%
    String userId = (String) session.getAttribute("leader");
    if(userId == null) {
-      response.sendRedirect("login");
+      response.sendRedirect("login2");
    }
    int SID=(int)session.getAttribute("SID");
    userSID usersid = new userSID();
