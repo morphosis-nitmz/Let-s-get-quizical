@@ -4,11 +4,12 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class CalScore {
-           public static void calScore(String user,int count,String answer)
+           public static boolean calScore(String user,int count,String answer)
            {
         	   Statement s5,s6;
         	   String correct=null;
         	    int score=0;
+        	    boolean check=false;
         	    
 			try {
 				s5 = DatabaseConnection.getConnection();
@@ -28,7 +29,8 @@ public class CalScore {
 				 
 				 if(answer.equals(correct))
 				    {
-				    	score=score+5;
+				    	score=score+20;
+				    	check=true;
 				    }
 				    System.out.println(score);
 				    System.out.println(user);
@@ -39,6 +41,7 @@ public class CalScore {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			return check;
         	   
            }
            public static int getScore(String user)

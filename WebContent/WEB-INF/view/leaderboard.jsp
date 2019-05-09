@@ -1,12 +1,50 @@
-<%@page import="java.sql.ResultSet"%>
+<%@page import="com.morphosis.login.userSID"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@page import="java.sql.ResultSet"%>
 <%@page import="com.morphosis.quiz.DatabaseConnection"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.util.ArrayList"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page import="com.morphosis.quiz.getTeam"%>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Leaderboard</title>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<style type="text/css">
+h1.x2{
+      font-size:3em; 
+  font-weight: 300;
+  line-height:1em;
+  text-align: center;
+  color: #4DC3FA;
+    }
+</style>
+
+</head>
+<body>
+
+<%
+   String userId= (String)session.getAttribute("leader");
+   if(session.getAttribute("leader")== null) {
+	   System.out.println(userId);
+   }
+   else{
+  
+   int SID=(int)session.getAttribute("SID");
+   userSID usersid = new userSID();
+   int USID= usersid.getSID(userId);
+   if(USID!=SID)
+   {
+	   response.sendRedirect("logout");
+   }
+   }
+   %>
+
   <head>
     <title>Let's get Quizzical</title>
     <meta charset="utf-8">
@@ -21,34 +59,73 @@
     <link rel="stylesheet" href="<c:url value="/resources/fonts/ionicons/css/ionicons.min.css" /> ">
     <link rel="stylesheet" href="<c:url value="/resources/fonts/fontawesome/css/font-awesome.min.css" />">
     <link rel="stylesheet" href="<c:url value="/resources/fonts/flaticon/font/flaticon.css" />" >
-      <link rel="stylesheet" href="<c:url value="/resources/css/leaderboard-style.css" />">
+
     <!-- Theme Style -->
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css" />">
+   
+   
   </head>
   <body>
-   <%if(null!=request.getAttribute("Success"))
-    {
-        out.println(request.getAttribute("Success"));
-    }
-%>
-   
-   <jsp:include page="header.jsp" />
- 
-    <section class="site-section bg-dark">
-     <h1> <span class="yellow">LEADERBOARD</span></h1>
-      <table class="container">
-	<thead>
-		<tr>
-			<th><h1>Rank</h1></th>
-			<th><h1>Leader</h1></th>
-			<th><h1>Member</h1></th>
-			<th><h1>Member</h1></th>
-			<th><h1>Score</h1></th>
+    
+    <header role="banner">
+     
+      <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container">
+          <a class="navbar-brand absolute" href="${pageContext.request.contextPath}/">Let's Get Quizzical</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-		</tr>
-	</thead>
-	<tbody>
-	
+          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="${pageContext.request.contextPath}/">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="rules">Rules</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav absolute-right">
+              <li class="nav-item">
+              <% //String userId = (String) session.getAttribute("leader");
+              if(userId == null){%>
+                <a href="login2" class="nav-link"> Login </a>
+                <%}
+              else { %> <a href="#" class="nav-link"> <%= userId %> </a> <%
+               } %>
+        
+              </li>
+              <li class="nav-item">
+             <% if(userId == null){%>
+                <a href="register" class="nav-link">Register</a>
+                <% } 
+             else { %> <a href="logout" class="nav-link">Logout</a> <% }
+            	 %>
+                
+              </li>
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END header -->
+ <section class="site-section bg-dark">
+ <h1 class="x2">Leaderboard</h1>
+<div class="table-responsive">
+<table class="table table-striped table-dark table-hover table-fit">
+  <thead>
+    <tr>
+      <th scope="col" style="color:yellow ;font-size : 16px">Rank</th>
+      <th scope="col" style="color:yellow ;font-size : 16px">Leader</th>
+      <th scope="col" style="color:yellow ;font-size : 16px">Member</th>
+      <th scope="col" style="color:yellow ;font-size : 16px">Member</th>
+      <th scope="col" style="color:yellow ;font-size : 16px">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+   
 	<%  Statement s5,s6,s7,s8;
 	 String[] name= new String[5];
 	 int count=0,score=0;
@@ -82,10 +159,12 @@
 		System.out.println(id[1]);
 		System.out.println(id[2]);
 		System.out.println(p);
-
+		int temp=0;
+		int rank=0;
 		for(int i=0;i<count;i++)
 		{  
 			int j=0;
+			
 			System.out.println(i);
 		     System.out.println(id[i]);
 			   s6=DatabaseConnection.getConnection();
@@ -103,20 +182,29 @@
 				   score=rs8.getInt("score");
 				   
 			   }
+			   if(temp==score)
+			   {
+				   
+			   }
+			   else{
+				   temp=score;
+				   rank++;
+			   }
+			   
 			   System.out.println(name[0]);
 			   System.out.println(name[1]);
 			   System.out.println(name[2]);
-			   
+			 //  temp=score;
 		
 	    %>
 	    	<tr>
-		    <td> <%=i+1 %></td>
-			<td>
+		    <td style="color:white ;font-size : 14px"> <%=rank %></td>
+			<td style="color:white ;font-size : 14px">
 			 <%=name[0] %>
 			 </td>
-			<td><%=name[1] %></td>
-			<td><%=name[2] %></td>
-			<td><%=score %></td>
+			<td style="color:white ;font-size : 14px"><%=name[1] %></td>
+			<td style="color:white ;font-size : 14px"><%=name[2] %></td>
+			<td style="color:white ;font-size : 14px"><%=score %></td>
 		</tr>
 		
 		    <%
@@ -128,77 +216,10 @@
 	}
 	%>
 	
-	</tbody>
+  </tbody>
 </table>
-    </section>
-	    
-	
-	
-
-  
-    <footer class="site-footer" style="background-image: url(resources/img/big_image_3.jpg);">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-4">
-            <h3>About</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, accusantium optio unde perferendis eum illum voluptatibus dolore tempora, consequatur minus asperiores temporibus reprehenderit.</p>
-          </div>
-          <div class="col-md-6 ml-auto">
-            <div class="row">
-              <div class="col-md-4">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Company</a></li>
-                  <li><a href="#">Teachers</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Categories</a></li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Company</a></li>
-                  <li><a href="#">Teachers</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Categories</a></li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Company</a></li>
-                  <li><a href="#">Teachers</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Categories</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- END footer -->
-    
-    <!-- loader -->
-    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
-
-    <script src="<c:url value="/resources/js/website/jquery-3.2.1.min.js" />" ></script>
-    <script src="<c:url value="/resources/js/website/jquery-migrate-3.0.0.js" /> "></script>
-    <script src="<c:url value="/resources/js/website/popper.min.js" /> "></script>
-    <script src="<c:url value="/resources/js/website/bootstrap.min.js" />"></script>
-    <script src="<c:url value="/resources/js/website/owl.carousel.min.js" />"></script>
-    <script src="<c:url value="/resources/js/website/jquery.waypoints.min.js" />"></script>
-    <script src="<c:url value="/resources/js/website/jquery.stellar.min.js" />"></script>
-
-    
-    <script src="<c:url value="/resources/js/website/main.js" />"></script>
-
-  </body>
+</div>
+</section>
+<jsp:include page="footer.jsp" />
+</body>
 </html>

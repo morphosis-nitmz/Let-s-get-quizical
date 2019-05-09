@@ -6,12 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class QuizController {
-	@RequestMapping("/questions")
-	public String listCustomers(Model theModel) {
-		
-		return "questions";
-	}
-	
+
 	@RequestMapping("/q1")
 	public String question1(Model theModel) {
 		
@@ -63,17 +58,6 @@ public class QuizController {
 		return "afterlogin";
 	}
 
-	@RequestMapping("/Ended")
-	public String Ended(Model theModel) {
-		
-		return "Ended";
-	}
-	
-	@RequestMapping("/scoreDisplay")
-	public String scoreDisplay(Model theModel) {
-		
-		return "scoreDisplay";
-	}
 	@RequestMapping("/")
 	public String home(Model theModel) {
 		
@@ -95,13 +79,7 @@ public class QuizController {
 		
 		return "contact";
 	}
-	
-	@RequestMapping("/goLive")
-	public String goLive(Model theModel) {
-		
-		return "goLive";
-	}
-	
+
 	@RequestMapping("/ComingSoon")
 	public String Coming(Model theModel) {
 		
@@ -113,9 +91,10 @@ public class QuizController {
 		return "leaderboard";
 	}
 	
-	@RequestMapping("/demo")
-	public String demo(Model theModel) {
+	@RequestMapping("/rules")
+	public String rules(Model theModel) {
 		
-		return "demo";
+		return "rules";
 	}
+	
 }

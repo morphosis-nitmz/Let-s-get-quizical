@@ -9,9 +9,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <link href="<c:url value="/resources/css/button-style.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/countdown.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/disable-back.js" />"></script>
+<%
+String checkbox=request.getParameter("checkbox");
+if("agree".equals(checkbox))
+{
+	System.out.println("agree");
+}
+else System.out.println(checkbox);
+%>
 
 
 <%
@@ -37,13 +48,6 @@
    } 
 %>
 
-<%
-String checkbox=request.getParameter("checkbox");
-if(request.getParameter("checkbox")==null)
-{
-	System.out.println("null");
-}
-%>
 
 <meta charset="ISO-8859-1">
 <%response.setHeader("Cache-Control","no-cache,no-store,must-revalidate");%>
@@ -58,12 +62,14 @@ if(request.getParameter("checkbox")==null)
     <script src="<c:url value="/resources/js/timer.js" />"></script>
 
 
-<div id="countdown"></div>
+
 
 
 </head>
 <body>
 <h1>Question 1</h1>
+
+<div id="countdown" class="countdown" role="alert"></div>
 
 <%
 String ques="loading..";

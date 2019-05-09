@@ -73,7 +73,8 @@
 
               if (t.total <= 0) {
                 clearInterval(timeinterval);
-                window.location.href = "q1";
+             document.getElementById("checkboxform").submit();
+               // window.location.href = "q1";
               }
             }
 

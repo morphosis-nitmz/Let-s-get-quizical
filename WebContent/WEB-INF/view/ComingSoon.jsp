@@ -1,9 +1,10 @@
+<%@page import="com.morphosis.login.userSID"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Coming Soon 2</title>
+	<title>Coming Soon</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -20,10 +21,36 @@
 	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/comingSoon/css/util.css" />">
 	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/comingSoon/css/main.css" />">
 <!--===============================================================================================-->
+
+<style type="text/css">
+.checkbox{
+display:none;]
+}
+
+</style>
 </head>
 <jsp:include page="header.jsp" />
 
 <body>
+	
+	<%
+	   String userId= (String)session.getAttribute("leader");
+	   if(session.getAttribute("leader")== null) {
+		   System.out.println(userId);
+	      response.sendRedirect("login2");
+	   }
+	   else{
+	  
+	   int SID=(int)session.getAttribute("SID");
+	   userSID usersid = new userSID();
+	   int USID= usersid.getSID(userId);
+	   if(USID!=SID)
+	   {
+		   response.sendRedirect("logout");
+	   }
+	   }
+	   
+	%>
 	
 	<!--  -->
 	<div class="simpleslide100">
@@ -61,12 +88,10 @@
 				</div>
 			</div>
 
-			<form class="checkbox" action="q1" method="post">
-
+			<form class="checkbox" id="checkboxform"  name="checkboxform" action="q1" method="post">
+             <input type="checkbox" id="f-option"  checked name="checkbox" value="agree" >
+        
        
-       <input type="checkbox" id="t-option" name="checkbox" value="true"> <p>Click on this check box if you agree to our rules and regulations.  </p>
-          
-			<p>Note: Checkbox must be checked before game starts.</p>
 			</form>
 		</div>
 	</div>
@@ -93,14 +118,15 @@
 			/*Endtime must be > current time*/
 			endtimeYear: 2019,
 			endtimeMonth: 05,
-			endtimeDate: 03,
-			endtimeHours: 23,
-			endtimeMinutes: 30,
+			endtimeDate: 09,
+			endtimeHours: 16,
+			endtimeMinutes: 32,
 			endtimeSeconds: 0,
 			timeZone: "Asia/Kolkata" 
 			// ex:  timeZone: "America/New_York"
 			//go to " http://momentjs.com/timezone/ " to get timezone
 		});
+		
 	</script>
 <!--===============================================================================================-->
 	<script src="<c:url value="/resources/comingSoon/vendor/tilt/tilt.jquery.min.js" /> "></script>

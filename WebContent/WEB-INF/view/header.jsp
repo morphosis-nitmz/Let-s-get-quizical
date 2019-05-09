@@ -40,13 +40,13 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="profile">Profile</a>
+                <a class="nav-link" href="rules">Rules</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="leaderboard">Leaderboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about">About us</a>
+                <a class="nav-link" href="https://www.morphosis.org.in/Our-Team.html">About us</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact">Contact</a>
@@ -58,7 +58,7 @@
               if(userId == null){%>
                 <a href="login2" class="nav-link"> Login </a>
                 <%}
-              else { %> <a href="profile" class="nav-link"> <%= userId %> </a> <%
+              else { %> <a href="#" class="nav-link"> <%= userId %> </a> <%
                } %>
         
               </li>

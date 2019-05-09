@@ -9,7 +9,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 <link href="<c:url value="/resources/css/button-style.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/countdown.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/disable-back.js" />"></script>
 <script src="<c:url value="/resources/js/timer.js" />"></script>
 
@@ -42,24 +46,41 @@
 
 <title>Question 3</title>
 
-<div id="countdown"></div>
+
 
 </head>
 <body>
-<h1>Question 3</h1>
-
 
 <%
 String answer2 = request.getParameter("answer2");
 String user=(String)session.getAttribute("leader");
-
+boolean check;
 if(answer2!=null)
 {
-	   CalScore.calScore(user,2,answer2);
+	 check=  CalScore.calScore(user,2,answer2);
+	 if(check==true)
+	  {
+		  %>
+		  <div class="alert alert-success" role="alert">
+     <strong>Well Done!</strong> Correct Answer. Carry on the streak!
+      </div>
+		  <%
+	  }
+	  else {
+		  %>
+		  	  <div class="alert style="background-color:red !important;"" role="alert">
+     <strong>Oops!!</strong>Wrong Answer..Pay attention to this question.! 
+      </div>
+		  <%
+	  }
 
 }
 
 %>
+
+<h1>Question 3</h1>
+<div id="countdown" class="countdown"></div>
+
 
 <%
 String ques="loading..";

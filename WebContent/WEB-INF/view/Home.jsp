@@ -22,8 +22,25 @@
 
     
   </head>
+  
+  <%
+   String userId= (String)session.getAttribute("leader");
+   if(session.getAttribute("leader")== null) {
+	   System.out.println(userId);
+   }
+   else{
+  
+   int SID=(int)session.getAttribute("SID");
+   userSID usersid = new userSID();
+   int USID= usersid.getSID(userId);
+   if(USID!=SID)
+   {
+	   response.sendRedirect("logout");
+   }
+   }
+   %>
+  
   <body>
-    
     <header role="banner">
      
       <nav class="navbar navbar-expand-md navbar-dark bg-light">
@@ -40,13 +57,13 @@
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="profile">Profile</a>
+                <a class="nav-link" href="rules">Rules</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="leaderboard">Leaderboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about">About us</a>
+                <a class="nav-link" href="https://www.morphosis.org.in/Our-Team.html">About us</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact">Contact</a>
@@ -54,11 +71,11 @@
             </ul>
             <ul class="navbar-nav absolute-right">
               <li class="nav-item">
-              <% String userId = (String) session.getAttribute("leader");
+              <% //String userId = (String) session.getAttribute("leader");
               if(userId == null){%>
                 <a href="login2" class="nav-link"> Login </a>
                 <%}
-              else { %> <a href="profile" class="nav-link"> <%= userId %> </a> <%
+              else { %> <a href="#" class="nav-link"> <%= userId %> </a> <%
                } %>
         
               </li>
@@ -96,268 +113,9 @@
     </section>
     <!-- END section -->
 
-    
-    <section class="school-features d-flex" style="background-image: url(resources/img/big_image_3.jpg);">
 
-      <div class="inner">
-        <div class="media d-block feature">
-          <div class="icon"><span class="flaticon-video-call"></span></div>
-          <div class="media-body">
-            <h3 class="mt-0">Online trainings from experts</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora fuga suscipit numquam esse saepe quam, eveniet iure assumenda dignissimos aliquam!</p>
-          </div>
-        </div>
-
-        <div class="media d-block feature">
-          <div class="icon"><span class="flaticon-student"></span></div>
-          <div class="media-body">
-            <h3 class="mt-0">Learn anywhere in the world</h3>
-            <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
-          </div>
-        </div>
-
-        <div class="media d-block feature">
-          <div class="icon"><span class="flaticon-video-player-1"></span></div>
-          <div class="media-body">
-            <h3 class="mt-0">Creative learning video</h3>
-            <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
-          </div>
-        </div>
-
-
-        <div class="media d-block feature">
-          <div class="icon"><span class="flaticon-audiobook"></span></div>
-          <div class="media-body">
-            <h3 class="mt-0">Audio learning</h3>
-            <p>Harum, adipisci, aspernatur. Vero repudiandae quos ab debitis, fugiat culpa obcaecati, voluptatibus ad distinctio cum soluta fugit sed animi eaque?</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-
-
-    <section class="site-section">
-      <div class="container">
-        <section class="school-features text-dark d-flex">
-
-          <div class="inner">
-            <div class="media d-block feature">
-              <div class="icon"><span class="flaticon-video-call"></span></div>
-              <div class="media-body">
-                <h3 class="mt-0">Online trainings from experts</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora fuga suscipit numquam esse saepe quam, eveniet iure assumenda dignissimos aliquam!</p>
-              </div>
-            </div>
-
-            <div class="media d-block feature">
-              <div class="icon"><span class="flaticon-student"></span></div>
-              <div class="media-body">
-                <h3 class="mt-0">Learn anywhere in the world</h3>
-                <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
-              </div>
-            </div>
-
-            <div class="media d-block feature">
-              <div class="icon"><span class="flaticon-video-player-1"></span></div>
-              <div class="media-body">
-                <h3 class="mt-0">Creative learning video</h3>
-                <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
-              </div>
-            </div>
-
-
-            <div class="media d-block feature">
-              <div class="icon"><span class="flaticon-audiobook"></span></div>
-              <div class="media-body">
-                <h3 class="mt-0">Audio learning</h3>
-                <p>Harum, adipisci, aspernatur. Vero repudiandae quos ab debitis, fugiat culpa obcaecati, voluptatibus ad distinctio cum soluta fugit sed animi eaque?</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="school-features text-dark last d-flex">
-
-          <div class="inner">
-            <div class="media d-block feature">
-              <div class="icon"><span class="flaticon-student-1"></span></div>
-              <div class="media-body">
-                <h3 class="mt-0">Online trainings from experts</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora fuga suscipit numquam esse saepe quam, eveniet iure assumenda dignissimos aliquam!</p>
-              </div>
-            </div>
-
-            <div class="media d-block feature">
-              <div class="icon"><span class="flaticon-interface"></span></div>
-              <div class="media-body">
-                <h3 class="mt-0">Learn anywhere in the world</h3>
-                <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
-              </div>
-            </div>
-
-            <div class="media d-block feature">
-              <div class="icon"><span class="flaticon-book"></span></div>
-              <div class="media-body">
-                <h3 class="mt-0">Creative learning video</h3>
-                <p>Delectus fuga voluptatum minus amet, mollitia distinctio assumenda voluptate quas repellat eius quisquam odio. Aliquam, laudantium, optio? Error velit, alias.</p>
-              </div>
-            </div>
-
-
-            <div class="media d-block feature">
-              <div class="icon"><span class="flaticon-geography"></span></div>
-              <div class="media-body">
-                <h3 class="mt-0">Audio learning</h3>
-                <p>Harum, adipisci, aspernatur. Vero repudiandae quos ab debitis, fugiat culpa obcaecati, voluptatibus ad distinctio cum soluta fugit sed animi eaque?</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-      </div>
-    </section>
-    <!-- END section -->
-
-    <section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(resources/img/big_image_3.jpg);">
-      <div class="container">
-        <div class="row justify-content-center align-items-center intro">
-          <div class="col-md-7 text-center element-animate">
-            <h2>Sign Up And Get a 7-day Free Trial</h2>
-            <p class="lead mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto quidem tempore expedita facere facilis, dolores!</p>
-            <p><a href="ComingSoon" class="btn btn-primary">Start the Quiz!</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-
-
-    <section class="site-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-md-7 text-center">
-            <h2>Top Courses</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum magnam illum maiores adipisci pariatur, eveniet.</p>
-          </div>
-        </div>
-        <div class="row top-course">
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="course">
-              <img src="resources/img/webdesign.jpg" alt="Image placeholder">
-              <h2>Web Design 101</h2>
-              <p>Enroll Now</p>
-            </a>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="course">
-              <img src="resources/img/wordpress.jpg" alt="Image placeholder">
-              <h2>Learn How To Develop WordPress Plugin</h2>
-              <p>Enroll Now</p>
-            </a>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="course">
-              <img src="resources/img/javascript.jpg" alt="Image placeholder">
-              <h2>JavaScript 101</h2>
-              <p>Enroll Now</p>
-            </a>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="course">
-              <img src="resources/img/photoshop.jpg" alt="Image placeholder">
-              <h2>Photoshop Design 101</h2>
-              <p>Enroll Now</p>
-            </a>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="course">
-              <img src="resources/img/reactjs.jpg" alt="Image placeholder">
-              <h2>Learn Native ReactJS</h2>
-              <p>Enroll Now</p>
-            </a>
-          </div>
-          <div class="col-lg-2 col-md-4 col-sm-6 col-12">
-            <a href="#" class="course">
-              <img src="resources/img/angularjs.jpg" alt="Image placeholder">
-              <h2>Learn AngularJS 2</h2>
-              <p>Enroll Now</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
   
-    <section class="overflow">
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-          
-          
-          <div class="col-lg-7 order-lg-3 order-1 mb-lg-0 mb-5">
-            <img src=resources/img/person_testimonial_1.jpg" alt="Image placeholder" class="img-md-fluid">
-          </div>
-          <div class="col-lg-1 order-lg-2"></div>
-          <div class="col-lg-4 order-lg-1 order-2 mb-lg-0 mb-5">
-            <blockquote class="testimonial">
-              &ldquo; Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt incidunt nihil ab cumque molestiae commodi. &rdquo;
-            </blockquote>
-            <p>&mdash; John Doe, Certified ReactJS Student</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- END section -->
-  
-    <footer class="site-footer" style="background-image: url(resources/img/big_image_3.jpg);">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-4">
-            <h3>About</h3>
-            <p>Let's get quizzical in the season to answer questions,swaggering and recalling.Let's give an exciting fanfare for the quizzing season to reach its zenith.</p>
-          </div>
-          <div class="col-md-6 ml-auto">
-            <div class="row">
-              <div class="col-md-4">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Company</a></li>
-                  <li><a href="#">Teachers</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Categories</a></li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Company</a></li>
-                  <li><a href="#">Teachers</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Categories</a></li>
-                </ul>
-              </div>
-              <div class="col-md-4">
-                <ul class="list-unstyled">
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Company</a></li>
-                  <li><a href="#">Teachers</a></li>
-                  <li><a href="#">Courses</a></li>
-                  <li><a href="#">Categories</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
+     <jsp:include page="footer.jsp" />
     <!-- END footer -->
     
     <!-- loader -->
@@ -374,4 +132,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     
     <script src="<c:url value="/resources/js/website/main.js" />"></script>
   </body>
-</html>
+    </html>

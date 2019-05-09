@@ -22,10 +22,10 @@
 <%
    String answer3 = request.getParameter("answer3");
    String user=(String)session.getAttribute("leader");
-
+   boolean check;
    if(answer3!=null)
    {
-	   CalScore.calScore(user,3,answer3);
+	  check= CalScore.calScore(user,3,answer3);
 
    }
    
