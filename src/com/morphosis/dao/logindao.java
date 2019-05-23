@@ -11,7 +11,6 @@ public class logindao {
 	String url = "jdbc:mysql://localhost:3306/quiz";
 	String username="root";
 	String password = "7352026597yk";
-
 	
 	public boolean check(String leader,String pass) {
 		

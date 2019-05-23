@@ -14,7 +14,7 @@ public class CalScore {
 			try {
 				s5 = DatabaseConnection.getConnection();
 				s6=DatabaseConnection.getConnection();
-				ResultSet rs5= s5.executeQuery("select answer from options where flag="+count);
+				ResultSet rs5= s5.executeQuery("select answer from answer where flag="+count);
 				ResultSet rs6= s6.executeQuery("select score from login where leader='"+user+"'");
 				
 				if(rs6.next())
@@ -29,7 +29,7 @@ public class CalScore {
 				 
 				 if(answer.equals(correct))
 				    {
-				    	score=score+20;
+				    	score=score+5;
 				    	check=true;
 				    }
 				    System.out.println(score);

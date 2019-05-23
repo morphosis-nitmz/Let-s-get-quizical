@@ -59,32 +59,32 @@
 	<div class="form-row">
 		<div class="col form-group">
 			<label>Leader name </label>   
-		  	<input type="text" name="leader" class="form-control" placeholder="" required>
+		  	<input type="text" pattern="^[a-zA-Z ]+$" name="leader" class="form-control" placeholder="" required>
 		</div> <!-- form-group end.// -->
 		<div class="col form-group">
 			<label>Enrollment number</label>
-		  	<input type="text" name="leader_enroll" class="form-control" placeholder=" " required>
+		  	<input type="text" pattern="[a-zA-Z0-9]+" name="leader_enroll" class="form-control" placeholder=" " required>
 		</div> <!-- form-group end.// -->
 	</div> <!-- form-row end.// -->
 	
 	<div class="form-row">
 		<div class="col form-group">
 			<label>Member name </label>   
-		  	<input type="text" name="member1"class="form-control" placeholder="" required>
+		  	<input type="text" pattern="^[a-zA-Z ]+$" name="member1"class="form-control" placeholder="" required>
 		</div> <!-- form-group end.// -->
 		<div class="col form-group">
 			<label>Enrollment number</label>
-		  	<input type="text" name="mem_enroll1"class="form-control" placeholder=" " required>
+		  	<input type="text" pattern="[a-zA-Z0-9]+" name="mem_enroll1"class="form-control" placeholder=" " required>
 		</div> <!-- form-group end.// -->
 	</div> <!-- form-row end.// -->
 	<div class="form-row">
 		<div class="col form-group">
 			<label>Member name </label>   
-		  	<input type="text" name="member2"  class="form-control" placeholder="" required>
+		  	<input type="text" pattern="^[a-zA-Z ]+$" name="member2"  class="form-control" placeholder="" required>
 		</div> <!-- form-group end.// -->
 		<div class="col form-group">
 			<label>Enrollment number</label>
-		  	<input type="text" name="mem_enroll2" class="form-control" placeholder=" " required>
+		  	<input type="text" pattern="[a-zA-Z0-9]+" name="mem_enroll2" class="form-control" placeholder=" " required>
 		</div> <!-- form-group end.// -->
 	</div> <!-- form-row end.// -->
 	<div class="form-group">

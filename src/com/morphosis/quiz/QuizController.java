@@ -7,23 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class QuizController {
 
-	@RequestMapping("/q1")
-	public String question1(Model theModel) {
-		
-		return "q1";
-	}
-	
-	@RequestMapping("/q2")
-	public String question2(Model theModel) {
-		
-		return "q2";
-	}
-	
-	@RequestMapping("/q3")
-	public String question3(Model theModel) {
-		
-		return "q3";
-	}
 	@RequestMapping("/score")
 	public String score(Model theModel) {
 		
@@ -96,5 +79,63 @@ public class QuizController {
 		
 		return "rules";
 	}
+	
+	@RequestMapping("/ques1")
+	public String ques1(Model theModel) {
+		
+		return "ques1";
+	}
+	
+	@RequestMapping("/ques2")
+	public String ques2(Model theModel) {
+		
+		return "ques2";
+	}
+	@RequestMapping("/ques3")
+	public String ques3(Model theModel) {
+		
+		return "ques3";
+	}
+	
+	@RequestMapping("/ques4")
+	public String ques4(Model theModel) {
+		
+		return "ques4";
+	}
+	@RequestMapping("/ques5")
+	public String ques5(Model theModel) {
+		
+		return "ques5";
+	}
+	@RequestMapping("/ques6")
+	public String ques6(Model theModel) {
+		
+		return "ques6";
+	}
+	@RequestMapping("/ques7")
+	public String ques7(Model theModel) {
+		
+		return "ques7";
+	}
+	
+	@RequestMapping("/ques8")
+	public String ques8(Model theModel) {
+		
+		return "ques8";
+	}
+	
+	@RequestMapping("/ques9")
+	public String ques9(Model theModel) {
+		
+		return "ques9";
+	}
+	
+	@RequestMapping("/ques10")
+	public String ques10(Model theModel) {
+		
+		return "ques10";
+	}
+
+	
 	
 }

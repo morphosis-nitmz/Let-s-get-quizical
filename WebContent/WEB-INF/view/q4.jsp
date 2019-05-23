@@ -15,7 +15,6 @@
 <link href="<c:url value="/resources/css/button-style.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/countdown.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/disable-back.js" />"></script>
-<script src="<c:url value="/resources/js/timer.js" />"></script>
 
 <%
    String userId = (String) session.getAttribute("leader");
@@ -30,10 +29,10 @@
    {
 	   response.sendRedirect("logout");
    }
-   if((int)session.getAttribute("q3")==1)
+   if((int)session.getAttribute("q4")==1)
 	    response.sendRedirect("logout");
 	    
-	else session.setAttribute("q3", 1);
+	else session.setAttribute("q4",1);
    }
 %>
 
@@ -44,43 +43,43 @@
 <% response.setDateHeader("Expires",-1);%> 
 
 
-<title>Question 3</title>
+
+<title>Question 4</title>
 
 
+    <script src="<c:url value="/resources/js/timer.js" />"></script>
 
 </head>
 <body>
 
 <%
-String answer2 = request.getParameter("answer");
+String answer1 = request.getParameter("answer");
 String user=(String)session.getAttribute("leader");
 boolean check;
-if(answer2!=null)
-{
-	 check=  CalScore.calScore(user,2,answer2);
-	 if(check==true)
+if(answer1!=null)
+    {
+	  check= CalScore.calScore(user,4,answer1);
+	  if(check==true)
 	  {
 		  %>
-		  <div class="alert alert-success" role="alert">
-     <strong>Well Done!</strong> Correct Answer. Carry on the streak!
-      </div>
+		  <div class="alert alert-success">
+      <strong>Well Done!</strong> Correct Answer. Carry on the streak!
+       </div>
 		  <%
 	  }
 	  else {
 		  %>
-		  	  <div class="alert style="background-color:red !important;"" role="alert">
-     <strong>Oops!!</strong>Wrong Answer..Pay attention to this question.! 
-      </div>
+		  	  <div class="alert" style="background-color:red !important;" role="alert">
+      <strong>Oops!!</strong> Wrong Answer..Pay attention to this question.! 
+       </div>
 		  <%
 	  }
-
-}
-
+    }
 %>
 
-<h1>Question 3</h1>
-<div id="countdown" class="countdown"></div>
+<h1>Question 4</h1>
 
+<div id="countdown" class="countdown"></div>
 
 <%
 String ques="loading..";
@@ -94,8 +93,8 @@ try {
 	Statement s=DatabaseConnection.getConnection();
 	Statement s2=DatabaseConnection.getConnection();
 	
-	ResultSet rs= s.executeQuery("select ques from options where flag=3");
-	ResultSet rs2= s2.executeQuery("select A,B,C,D from options where flag=3");
+	ResultSet rs= s.executeQuery("select ques from options where flag=4");
+	ResultSet rs2= s2.executeQuery("select A,B,C,D from options where flag=4");
 	
 	if(rs.next())
 	{
@@ -120,7 +119,6 @@ try {
 
 
 %>
-
 <div class="container">
 	
 	<h2><%=ques%></h2>

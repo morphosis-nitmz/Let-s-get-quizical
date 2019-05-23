@@ -1,3 +1,4 @@
+<%@page import="com.morphosis.quiz.Delete"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -14,10 +15,10 @@
 <%
 String confPass= request.getParameter("ConfPass");
 String password= request.getParameter("password"); 
+int id=0;
 if(confPass.equals(password))
 {
 try{
-	int id=0;
 	String leader_enroll=request.getParameter("leader_enroll");
 	String leader =request.getParameter("leader");
 	String member1=request.getParameter("member1");
@@ -40,17 +41,20 @@ try{
 		id=rs2.getInt(1);
 	}
 	System.out.println(id);
+	String sql6="insert into registration(id,enrollment,name) values('"+id+"','"+leader_enroll+"','"+leader+"')";
 	String sql2="insert into registration(id,enrollment,name) values('"+id+"','"+mem_enroll1+"','"+member1+"')";
 	String sql3="insert into registration(id,enrollment,name) values('"+id+"','"+mem_enroll2+"','"+member2+"')";
-	String sql6="insert into registration(id,enrollment,name) values('"+id+"','"+leader_enroll+"','"+leader+"')";
+	
+	int rs6=s6.executeUpdate(sql6);
 	int rs3=s3.executeUpdate(sql2);
 	int rs4=s4.executeUpdate(sql3);
-	int rs6=s6.executeUpdate(sql6);
+	
 	DatabaseConnection.getCloseConnection();
 	
 }catch (Exception e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();	
+	Delete.delete(id);
 	request.setAttribute("errorMessage", "One or more Enrollment Number has already been registered in a team");
 	RequestDispatcher rd1 = request.getRequestDispatcher("register.jsp");
     rd1.forward(request, response);

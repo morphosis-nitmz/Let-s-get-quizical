@@ -14,13 +14,12 @@ public class DatabaseConnection {
 	{
          Statement statement=null;
 	    // Database Info
-		 String db_url = "jdbc:mysql://localhost:3306/quiz"; // put your own endpoint link
-		    String db_user = "root"; //put your password 
-		    String db_password = "7352026597yk"; // put your password
-	    
+         String url = "jdbc:mysql://localhost:3306/quiz";
+     	String username="root";
+     	String password = "7352026597yk";
 	    try{
 	    	Class.forName("com.mysql.jdbc.Driver");
-		    con= DriverManager.getConnection(db_url,db_user,db_password);
+		    con= DriverManager.getConnection(url,username,password);
 		    
 
 	    } catch(Exception e){

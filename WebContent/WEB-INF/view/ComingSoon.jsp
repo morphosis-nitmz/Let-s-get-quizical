@@ -88,7 +88,7 @@ display:none;]
 				</div>
 			</div>
 
-			<form class="checkbox" id="checkboxform"  name="checkboxform" action="q1" method="post">
+			<form class="checkbox" id="checkboxform"  name="checkboxform" action="ques1" method="post">
              <input type="checkbox" id="f-option"  checked name="checkbox" value="agree" >
         
        
@@ -118,10 +118,10 @@ display:none;]
 			/*Endtime must be > current time*/
 			endtimeYear: 2019,
 			endtimeMonth: 05,
-			endtimeDate: 09,
-			endtimeHours: 16,
-			endtimeMinutes: 32,
-			endtimeSeconds: 0,
+			endtimeDate: 24,
+			endtimeHours: 00,
+			endtimeMinutes: 40,
+			endtimeSeconds: 00,
 			timeZone: "Asia/Kolkata" 
 			// ex:  timeZone: "America/New_York"
 			//go to " http://momentjs.com/timezone/ " to get timezone

@@ -35,7 +35,7 @@
           <div class="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
             <ul class="footer-links">
-              <li><a href="home">Home</a></li>
+              <li><a href="${pageContext.request.contextPath}/">Home</a></li>
               <li><a href="leaderboard">Leaderboard</a></li>
               <li><a href="contact">Contact Us</a></li>
             </ul>

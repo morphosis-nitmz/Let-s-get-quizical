@@ -118,7 +118,7 @@ h1.x2{
   <thead>
     <tr>
       <th scope="col" style="color:yellow ;font-size : 16px">Rank</th>
-      <th scope="col" style="color:yellow ;font-size : 16px">Leader</th>
+      <th scope="col" style="color:yellow ;font-size : 16px">Member</th>
       <th scope="col" style="color:yellow ;font-size : 16px">Member</th>
       <th scope="col" style="color:yellow ;font-size : 16px">Member</th>
       <th scope="col" style="color:yellow ;font-size : 16px">Score</th>

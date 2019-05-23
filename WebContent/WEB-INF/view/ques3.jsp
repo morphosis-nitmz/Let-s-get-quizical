@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=yes">
 
 <link href="<c:url value="/resources/css/button-style.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/countdown.css" />" rel="stylesheet">
@@ -18,9 +18,12 @@
 <script src="<c:url value="/resources/js/timer.js" />"></script>
 
 <%
+try{
    String userId = (String) session.getAttribute("leader");
    if(userId == null) {
+	   System.out.println("login");
       response.sendRedirect("login2");
+     
    }
    else{
    int SID=(int)session.getAttribute("SID");
@@ -35,6 +38,11 @@
 	    
 	else session.setAttribute("q3", 1);
    }
+}
+catch (Exception e) {
+	// TODO Auto-generated catch block
+	e.printStackTrace();
+}
 %>
 
 <meta charset="ISO-8859-1">
@@ -68,7 +76,7 @@ if(answer2!=null)
 	  }
 	  else {
 		  %>
-		  	  <div class="alert style="background-color:red !important;"" role="alert">
+		  	  <div class="alert" style= "background-color:red !important;" role="alert">
      <strong>Oops!!</strong>Wrong Answer..Pay attention to this question.! 
       </div>
 		  <%
@@ -79,80 +87,40 @@ if(answer2!=null)
 %>
 
 <h1>Question 3</h1>
-<div id="countdown" class="countdown"></div>
-
-
-<%
-String ques="loading..";
-
-String option_A = "loading..";
-String option_B = "loading..";
-String option_C = "loading..";
-String option_D = "loading..";
-
-try {
-	Statement s=DatabaseConnection.getConnection();
-	Statement s2=DatabaseConnection.getConnection();
-	
-	ResultSet rs= s.executeQuery("select ques from options where flag=3");
-	ResultSet rs2= s2.executeQuery("select A,B,C,D from options where flag=3");
-	
-	if(rs.next())
-	{
-	ques=rs.getString(1);
-	
-	}
-	
-	if(rs2.next()) {
-		option_A=rs2.getString("A");
-		option_B=rs2.getString("B");
-		option_C=rs2.getString("C");
-		option_D=rs2.getString("D");
-
-	}
-	DatabaseConnection.getCloseConnection();
-	
-	
-}catch (Exception e) {
-	// TODO Auto-generated catch block
-	e.printStackTrace();
-}
-
-
-%>
+<div id="countdown" ></div>
 
 <div class="container">
 	
-	<h2><%=ques%></h2>
-	 <form name="options" action="score" method="post">
+	<h2>Yuvika 2019, which is in news recently, is associated to which of the organizations?</h2>
+	 <form name="options" action="ques4" method="post">
   <ul>
  
   <li>
   
-    <input type="radio" id="f-option" name="answer" value="<%=option_A %>">
-    <label for="f-option"><%=option_A %></label>
+    <input type="radio" id="f-option" name="answer" value="ISRO">
+    <label for="f-option">ISRO</label>
     
     <div class="check"></div>
   </li>
   
   <li>
-    <input type="radio" id="s-option" name="answer" value="<%=option_B %>">
-    <label for="s-option"><%=option_B %></label>
+    <input type="radio" id="s-option" name="answer" value="RBI">
+    <label for="s-option">RBI</label>
     
     <div class="check"><div class="inside"></div></div>
   </li>
   
   <li>
-    <input type="radio" id="t-option" name="answer" value="<%=option_C %>">
-    <label for="t-option"><%=option_C %></label>
+    <input type="radio" id="t-option" name="answer" value="BSNL">
+    <label for="t-option">BSNL</label>
     
     <div class="check"><div class="inside"></div></div>
     
   </li>
   
    <li>
-    <input type="radio" id="u-option" name="answer" value="<%=option_D %>">
-    <label for="u-option"><%=option_D %></label>
+    <input type="radio" id="u-option" name="answer" value="DRDO">
+    <label for="u-option">DRDO</label>
     
     <div class="check"><div class="inside"></div></div>
     
